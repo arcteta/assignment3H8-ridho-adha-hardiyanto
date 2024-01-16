@@ -1,12 +1,24 @@
-const countSumArr = (arr) => {
+const countSumArr = (arr, testCase) => {
 
-    const sortedArr = arr.sort((a, b) => { return a - b })
+    let expected = testCase
 
-    return ;
+    const sortedArr = arr.sort((a, b) => { return a - b });
 
+    let arrCollection = [];
+
+    for (let i = 0; i < sortedArr.length; i++) {
+        
+        for (let j = i + 1; j < sortedArr.length; j++) {
+            let tampArrJ = sortedArr[i] + sortedArr[j];
+            if (tampArrJ === expected) {
+                arrCollection.push([sortedArr[i], sortedArr[j]])
+            }
+        }
+    }
+    return arrCollection;
 }
 
-const testCase = [2, 1, 4, 3];
+const arr = [2, 1, 4, 3];
 
 
-console.log(countSumArr(testCase));
+console.log(countSumArr(arr, 5));

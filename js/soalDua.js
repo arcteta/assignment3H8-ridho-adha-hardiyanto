@@ -2,7 +2,6 @@ const threeStepsAB = (inputUser) => {
 
     let tampArr = inputUser.split("")
 
-
     for (let i = 0; i < inputUser.length; i++) {
         if (tampArr[i] === 'a' || tampArr[i] === 'A') {
             if (tampArr[i + 4] === 'b' || tampArr[i + 4] === 'B') {
