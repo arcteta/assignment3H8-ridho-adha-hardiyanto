@@ -7,7 +7,7 @@ const findHighestCountArr = (arr, arrLength) => {
     for (let i = 0; i < test.length; i++) {
 
         maxEndingHere = maxEndingHere + arr[i]
-        if(maxSoFar < max)
+        if(maxSoFar < max);
     }
 
     return
