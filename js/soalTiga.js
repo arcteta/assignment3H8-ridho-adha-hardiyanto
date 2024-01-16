@@ -7,7 +7,6 @@ const countSumArr = (arr, testCase) => {
     let arrCollection = [];
 
     for (let i = 0; i < sortedArr.length; i++) {
-        
         for (let j = i + 1; j < sortedArr.length; j++) {
             let tampArrJ = sortedArr[i] + sortedArr[j];
             if (tampArrJ === expected) {
@@ -19,6 +18,8 @@ const countSumArr = (arr, testCase) => {
 }
 
 const arr = [2, 1, 4, 3];
+const arr2 = [1, 8, 10, 3];
 
 
 console.log(countSumArr(arr, 5));
+console.log(countSumArr(arr2, 11));
