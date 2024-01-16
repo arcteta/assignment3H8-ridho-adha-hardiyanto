@@ -1,19 +1,30 @@
 const findHighestCountArr = (arr, arrLength) => {
 
-    let maxInt = Math.pow(2, 53);
-    let maxSoFar = maxInt - 1;
-    let maxEndingHere = 0;
+    let maxSum = -9999;
+    let currentSum = 0;
+    let startIndex = 0;
+    let endIndex = arrLength - 1;
 
-    for (let i = 0; i < test.length; i++) {
+    for (let i = 0; i < arrLength; i++) {
+        if (currentSum < 0) {
+            currentSum = arr[i];
 
-        maxEndingHere = maxEndingHere + arr[i]
-        if(maxSoFar < max);;;
+            startIndex = i;
+        } else {
+            currentSum += arr[i];
+        }
+
+        if (maxSum < currentSum){
+            maxSum = currentSum
+
+            endIndex = i
+        }
     }
 
-    return
+    return [arr.slice(startIndex,endIndex), maxSum];
 
 }
 
-arr = [-2, -3, 4, -1, -2, 1, 5, -3]
+let arr = [-2, -3, 4, -1, -2, 1, 5, -3]
 
-console.log(findHighestCountArr(arr))
+console.log(findHighestCountArr(arr, arr.length));
